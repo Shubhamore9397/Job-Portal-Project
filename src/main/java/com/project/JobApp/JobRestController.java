@@ -1,7 +1,9 @@
 package com.project.JobApp;
 
 import com.project.JobApp.model.JobPost;
+import com.project.JobApp.model.User;
 import com.project.JobApp.service.JobService;
+import com.project.JobApp.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -12,6 +14,14 @@ public class JobRestController {
 
     @Autowired
     private JobService service;
+
+    @Autowired
+    private UserService userService;
+
+    @PostMapping("register")
+    public User register(@RequestBody User user){
+        return userService.saveUser(user);
+    }
 
     @GetMapping("jobPosts")
     public List<JobPost> getAllJobs(){
