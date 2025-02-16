@@ -10,7 +10,7 @@ import java.util.Collections;
 
 public class UserPrincipal implements UserDetails {
 
-    private static final long serialVersionUID = 1L;
+//    private static final long serialVersionUID = 1L;
 
     @Autowired
     private User user;
